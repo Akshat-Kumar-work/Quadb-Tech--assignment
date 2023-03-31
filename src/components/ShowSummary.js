@@ -1,21 +1,20 @@
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
+
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 
 function ShowSummary(){ 
-const location = useLocation();
-const summary = location.state;
-console.log(summary)
 
+const location = useLocation();
+const summary = location.state.Summary
+const navigate = useNavigate();
 
 
     return(
-        <div>
-        {
-           // summary.forEach( (word)=>{ return( word) })
-        }
+        <div className="summary-box">
         
+      <p className="summary"> {summary}</p>
+        <button onClick={()=>navigate("/bookticket")}>Book Ticket</button>
         </div>
     )
 }

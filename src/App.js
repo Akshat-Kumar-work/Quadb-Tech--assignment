@@ -2,7 +2,8 @@ import ShowInfoContainer from './components/ShowInfoContainer';
 import ShowSummary from './components/ShowSummary';
 import './App.css';
 import {Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import BookTicket from './components/BookTicket';
+import TicketBooked from './components/TicketBooked';
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
       <Routes>
         <Route path='/' element={<ShowInfoContainer  ></ShowInfoContainer>}></Route>
         <Route path="/showsummary" element={<ShowSummary ></ShowSummary>}></Route>
+        <Route path='/bookticket' element={<BookTicket></BookTicket>}></Route>
+        <Route path='/ticketbooked' element={<TicketBooked></TicketBooked>}></Route>
       </Routes>
     </div>
   );

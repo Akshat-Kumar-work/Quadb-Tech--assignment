@@ -3,13 +3,13 @@ import {  Link, useNavigate } from "react-router-dom";
 
 function Card (props){
    const showData = props.showdata;
-
-   console.log(showData)
+    const Name = showData.name;
+  
     const Summary = showData.summary;
    const navigate = useNavigate();
     
    function clickHandler(){
-    navigate("/showsummary", {state : {Summary:Summary} })
+    navigate("/showsummary", {state : {Summary:Summary}})
    }
 
     return(
@@ -22,7 +22,7 @@ function Card (props){
 
 {/* show details */}
 <div className="show-details">
-    <p className="tour-name">{showData.name}</p>
+    <p className="tour-name">{Name}</p>
     <p >{ <Link className="btn-white" to={showData.url}>Show Info</Link>}</p>
 </div>
 
