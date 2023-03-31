@@ -1,20 +1,16 @@
-import {  useNavigate } from "react-router-dom";
-import ShowSummary from "./ShowSummary";
+import {  Link, useNavigate } from "react-router-dom";
+
 
 function Card (props){
-
    const showData = props.showdata;
+
    console.log(showData)
-   let id = showData.id;
-   
-   
-
- const navigate = useNavigate();
-
-function clickHandler(){
-    navigate("/showsummary");
-    return ( <ShowSummary id={id}></ShowSummary> ) 
-}
+    const Summary = showData.summary;
+   const navigate = useNavigate();
+    
+   function clickHandler(){
+    navigate("/showsummary", {state : {Summary:Summary} })
+   }
 
     return(
         
@@ -27,10 +23,10 @@ function clickHandler(){
 {/* show details */}
 <div className="show-details">
     <p className="tour-name">{showData.name}</p>
-    <p>{showData.rating[0]}</p>
+    <p >{ <Link className="btn-white" to={showData.url}>Show Info</Link>}</p>
 </div>
 
-<button onClick={clickHandler} className="btn-red" >
+<button onClick={ clickHandler} className="btn-red" >
    Show Summary
 </button>
 

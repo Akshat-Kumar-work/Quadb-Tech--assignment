@@ -8,6 +8,9 @@ import {toast} from 'react-toastify'
 
 function ShowInfoContainer(){
 
+
+
+
 const [shows, setshows] = useState([])
 
 async function fetchdata (){
@@ -38,7 +41,7 @@ fetchdata()
             //single show is passing as a property of card
             shows.map( (show)=>{ 
                    
-            return <Card  key={show.show.id} showdata={show.show} ></Card> 
+            return <Card  key={show.show.id} showdata={show.show}></Card> 
 
             
         } )
