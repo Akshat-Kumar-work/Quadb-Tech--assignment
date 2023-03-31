@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./BookTicket.css";
 
 function BookTicket() {
 
@@ -7,7 +8,6 @@ function BookTicket() {
     Name:"",
     movieName:"",
     Email:"",
-   
     City:"",
     State:"",
     coldrink:false,
@@ -15,6 +15,8 @@ function BookTicket() {
     Offers:false,
     pushNotification:""
   })
+
+  
 
   function changeHandler (event){
     const {name , value , checked , type} = event.target;
@@ -24,12 +26,33 @@ function BookTicket() {
   }
   const navigate = useNavigate();
 
+  
+
   function saveHandler (event){
     event.preventDefault();
     console.log(formData)
     navigate("/ticketbooked")
   }
   
+  useEffect( ()=>{
+    if (localStorage.getItem(JSON.stringify( formData.Name) )){
+  localStorage.setItem(JSON.stringify( formData.Name))
+    }
+    
+    if (localStorage.getItem(JSON.stringify( formData.movieName))){
+      localStorage.setItem(JSON.stringify( formData.movieName))
+    }
+    if (localStorage.getItem(JSON.stringify( formData.Email))){
+      localStorage.setItem(JSON.stringify( formData.Email))
+    }
+    if (localStorage.getItem(JSON.stringify( formData.City))){
+      localStorage.setItem(JSON.stringify( formData.City))
+    }
+    if (localStorage.getItem(JSON.stringify( formData.State))){
+      localStorage.setItem(JSON.stringify( formData.State))
+    }
+    
+  },[])
 
   return (
     <div className="form-container" >
@@ -40,31 +63,35 @@ function BookTicket() {
             <input id="firstname" type="text" placeholder="Akshat" name="Name" value={formData.Name} onChange={changeHandler}
             className=" placeholder-gray-400 w-full"></input>
 <br></br>
+<br></br>
 <label htmlFor="lastname">Movie Name</label> <br></br>
             <input id="lastname" type="text" placeholder="All American" name="movieName" value={formData.movieName} onChange={changeHandler}
             className=" placeholder-gray-400 w-full"></input>
+<br></br>
 <br></br>
 <label htmlFor="email">Email Address</label> <br></br>
             <input id="email" type="text" placeholder="iamakku0.0.0.1@gmail.com" name="Email" value={formData.Email} onChange={changeHandler}
             className=" placeholder-gray-400 w-full"></input>
 <br></br>
-
+<br></br>
 
 <label htmlFor="city">City</label> <br></br>
             <input id="city" type="text" placeholder="Uttam Nagar" name="City" value={formData.City} onChange={changeHandler}
             className=" placeholder-gray-400 w-full"></input>
+<br></br>
 <br></br>
 <label htmlFor="state">State</label> <br></br>
             <input id="state" type="text" placeholder="New Delhi" name="State" value={formData.State} onChange={changeHandler}
             className=" placeholder-gray-400 w-full"></input>
 
 <br></br>
-
+<br></br>
 <p>Foods and Drinks</p>
 
 <input id="Coldrinks" type="checkbox" name="coldrink" checked={formData.coldrink} onChange={changeHandler}></input>
 <label htmlFor="Coldrinks">Soft Drinks</label> 
 <br></br>
+
 
 
 <input id="Popcorn" type="checkbox" name="popcorn" checked={formData.popcorn} onChange={changeHandler}></input>
@@ -77,7 +104,7 @@ function BookTicket() {
 
 
 
-
+<br></br>
 
 <p>Select type</p>
 
@@ -89,9 +116,9 @@ function BookTicket() {
 <label htmlFor="no push">4d</label>
 
 <br></br>
-
+<br></br>
 <button>
- Book-PLEASE
+ Book-IT
 </button>
             
           </form>

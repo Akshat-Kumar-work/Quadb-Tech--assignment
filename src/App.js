@@ -8,7 +8,6 @@ import TicketBooked from './components/TicketBooked';
 
 function App() {
 
-
   return (
     <div >
 

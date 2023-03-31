@@ -39,13 +39,14 @@ body{
 .title{
   font-size: 3rem;
   margin:6vh;
-  border: 7px dashed rgb(1,17,160);
+  border: 7px solid rgb(1,17,160);
   border-radius: 20px;
   padding:1vh 5vw;
 
 }
 
 .tour-name{
+  margin-top: 18px;
   font-size:1.5rem;
 }
 
@@ -88,12 +89,3 @@ body{
   transition: all 0.2s;
 }
 
-.summary-box{
-  background-color: #bfb8d2;
-  max-width: 1300px;
-}
-
-.summary{
-font-family: 'Courier New', Courier, monospace;
-align-items: center;
-}

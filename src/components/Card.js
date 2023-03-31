@@ -9,6 +9,7 @@ function Card (props){
    const navigate = useNavigate();
     
    function clickHandler(){
+    //passing summary data with navigate hook
     navigate("/showsummary", {state : {Summary:Summary}})
    }
 

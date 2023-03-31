@@ -8,9 +8,6 @@ import {toast} from 'react-toastify'
 
 function ShowInfoContainer(){
 
-
-
-
 const [shows, setshows] = useState([])
 
 async function fetchdata (){
