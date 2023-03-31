@@ -30,17 +30,22 @@ fetchdata()
 },[]);
    
     return(
-        <div>
-            {
-                    //single show is passing as a property of card
-                    shows.map( (show)=>{ 
-                           
-                    return <Card  key={show.show.id} showdata={show.show} ></Card> 
+<div className="container">
+<div className='title'>QUADB-TECH-ASSIGNMENT</div>
 
-                    
-                } )
-               }
-        </div>
+<div className="cards">
+    {
+            //single show is passing as a property of card
+            shows.map( (show)=>{ 
+                   
+            return <Card  key={show.show.id} showdata={show.show} ></Card> 
+
+            
+        } )
+       }
+</div>
+</div>
+     
     )
 
 }
