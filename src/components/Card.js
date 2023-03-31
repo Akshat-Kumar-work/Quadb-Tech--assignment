@@ -1,5 +1,5 @@
 import {  Link, useNavigate } from "react-router-dom";
-
+import noimg from "../image/noimg.jpg"
 
 function Card (props){
    const showData = props.showdata;
@@ -18,7 +18,7 @@ function Card (props){
 <div className="card">
 
 
-<img className="image" src={ showData.image? showData.image.medium : "https:previews.123rf.com/images/urfandadashov/urfandadashov1806/urfandadashov180601827/150417827-photo-not-available-vector-icon-isolated-on-transparent-background-photo-not-available-logo-concept.jpg" } ></img>
+<img className="image" src={ showData.image? showData.image.medium : noimg } ></img>
 
 
 {/* show details */}
